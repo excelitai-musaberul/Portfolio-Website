@@ -308,6 +308,7 @@ position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
 }
 .left-side-header-wrap .left-side-header-inner .social-media {
   position: relative;
@@ -434,17 +435,25 @@ background: rgba(255,255,255,0.2);
 Banner Section [Slider ]
 ================================== */
 .main{
-   background:#292929;
+   /* background:#292929; */
 }
 
 .banner-section{
   width: 100%;
   /* height: 80vh; */
   background:#292929;
+  position: relative;
+  height: 92vh;
+  z-index: -7;
+  
 }
 
 /* swipper slider  */
 
+.slider-wrap{
+  background: red;
+  height: 92vh;
+}
 
       .swiper {
         width: 100%;
