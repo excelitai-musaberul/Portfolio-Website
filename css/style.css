@@ -1,0 +1,479 @@
+/* =====================
+      Common CSS 
+======================== */
+
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+ scroll-behavior: smooth;
+}
+
+a{
+ text-decoration: none;
+}
+ul{
+ list-style: none;
+}
+
+
+:root{
+ --main-color:#313131;
+ --primary-color:#F57500;
+ --white-color:#fff;
+
+}
+
+
+
+/* =================
+       Header 
+==================== */
+
+.header{
+display: flex;
+align-items: center;
+
+
+}
+
+.header-wrapper{
+      width: 70%;
+      background: var(--main-color);
+      height: 83px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+.header-wraper2{
+      width: 30%;
+      background: var(--primary-color);
+      height: 83px;
+          display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header-wrapper .logo{
+      color: white;
+      font-size: 28px;
+      font-weight: bolder;
+      padding: 20px 30px ;
+}
+.header-wrapper .nav .menu-btn i {
+      color: #fff;
+      background: gray;
+}
+.header-inner{
+  display: flex;
+  align-items: center;
+}
+.header-inner .header-cont{
+ padding: 0 30px;
+   color: #a4b0be;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 450;
+      font-size: 14px;
+}
+/* .header-inner span{
+    
+     
+} */
+.header-inner span .phone{
+
+      color: var(--primary-color);
+      position: relative;
+}
+.header-inner span .email{
+      color: var(--primary-color);
+      margin-right: 60px;
+}
+
+
+.header-inner span .phone::after{
+    position: absolute;
+    content: " ";
+    top: 50%;
+    left: -232px;
+    width: 60px;
+    height: 1px;
+    background: #73777a;
+}
+/* Start Navbar  */
+.main-nav{
+    background: rgba(255,255,255,0.05);
+    height: 80px;
+    width: 135px;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+     top: 25px;
+    left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: var(--primary-color);
+}
+
+#menuToggle a.active{
+    color: var(--primary-color);
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #fff;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #fff;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu{
+  /* position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0); */
+   position: absolute;
+    width: 450px;
+   margin: 27px 0 0 -365px;
+    padding: 50px;
+    padding-top: 125px;
+    background:var(--main-color);
+    color: #fff;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(0, -574px);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    z-index: -1;
+}
+
+   
+#menu li
+{
+  padding: 10px 0;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+.header-inner2{
+display: flex;
+align-items: center;
+}
+
+.header-names{
+
+background: rgba(0,0,0,0.1);
+color: #fff;
+text-transform: uppercase;
+letter-spacing: 3px;
+font-weight: 500;
+font-size: 12px;
+padding:  10px 20px; 
+margin-right: 100px;
+position: relative;
+}
+.header-names::after{
+  position: absolute;
+  content: " ";
+  top: 50%;
+  left: -60%;
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,0.5);
+}
+
+
+/* Main Section  */
+
+/* Left Side Menu  */
+.left-side-header-wrap{
+  width: 90px;
+  height: 92vh;
+  background: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-side-header-wrap .left-side-header-inner .social-media {
+  position: relative;
+}
+
+.left-side-header-wrap .left-side-header-inner{
+  position: relative;
+}
+.left-side-header-wrap .left-side-header-inner::before{
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 80px;
+    left: 44%;
+    top: -369px;
+  background-color: rgba(255,255,255,0.2);;
+}
+.left-side-header-wrap .left-side-header-inner::after{
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+    left: 41%;
+    top: -290px;
+  background-color: var(--primary-color);
+}
+.left-side-header-wrap .left-side-header-inner .social-media::after{
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 8px;
+  left:20%;
+  bottom: -50px;
+  background-color: var(--primary-color);
+}
+.left-side-header-wrap .left-side-header-inner .social-media ul li a i{
+    background: #313131;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #73777a;
+width: 40px;
+height: 40px;
+text-align: center;
+font-size: 16px;
+padding: 9px;
+position: relative;
+margin-right: 30px;
+transition: all 0.3s ease;
+
+}
+
+
+
+.left-side-header-wrap .left-side-header-inner .social-media ul li a i:hover{
+  background: var(--primary-color);
+  color: #fff;
+}
+
+
+
+/* Social-media  */
+.share-social-media{
+  position: fixed;
+    display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  bottom: 0%;
+  margin-bottom: 0;
+
+}
+.share-social-media-btn1{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.share-social-media-btn1::after{
+position: absolute;
+content: " ";
+width: 1px;
+height: 100px;
+top: -150px;
+left: 50%;
+background: rgba(255,255,255,0.2);
+
+}
+.share-social-media-btn1 .social-btn i{
+  color: #fff;
+  text-align: center;
+   background: var(--primary-color);
+  height: 80px;
+  width: 96px;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.share-social-media-btn2 .share-btn{
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+   background: var(--main-color);
+  height: 80px;
+  width: 96px;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.5s all;
+}
+
+.share-social-media-btn2:hover .share-btn:hover{
+
+  background: var(--primary-color);
+}
+
+
+
+/* =======================
+Banner Section [Slider ]
+================================== */
+.main{
+   background:#292929;
+}
+
+.banner-section{
+  width: 100%;
+  /* height: 80vh; */
+  background:#292929;
+}
+
+/* swipper slider  */
+
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
